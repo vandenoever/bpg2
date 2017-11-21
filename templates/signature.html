@@ -1,0 +1,18 @@
+{% extends "mainpage.html" %}
+{% block body %}
+
+{% if uid %}
+    {% if document %}
+    <h2>Enter your passphrase to sign document &quot;{{ document }}&quot;</h2>
+    <form action="{{ url_for('signature') }}" method=post class=signature>
+        <input type="hidden" name="uid" value="{{ uid }}">
+        <input type="hidden" name="document" value="{{ document }}">
+        <input type="password" name="passphrase">
+        <input type=submit value="Sign and store">
+    </form>
+
+    {% endif %}
+{% endif %}
+
+
+{% endblock %}

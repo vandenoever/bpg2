@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Some title</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include 'menu.html' %}
+
+{% autoescape false %}
+<hr>
+{% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+{% endfor %}
+{% endautoescape %}
+<hr>
+
+{% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "mainpage.html" %}
+{% block body %}
+<h2>Requesting signatures on documents</h2>
+
+{% if keyList %}
+    {#When a doc is selected allow selection of needed signatures #}
+<h2>Select signatures needed for document: <u>&quot;{{ document }}&quot;</u></h2>
+    <p>
+    <form action="{{ url_for('assignsig') }}" method=post class=assignsig>
+        <input type="hidden" name="document" value="{{ document }}">
+        <select name="neededsigs" multiple>
+            {% for key in keyList %}
+                <option value="{{ key['key'] }}">{{ key['uid'] }}</option>
+            {% endfor %}
+            </select>
+        <input type=submit value="Add needed signatures">
+    </form>
+    <hr>
+{% else %}
+    <b>Document &quot;{{ document }}&quot; added to sign queue.</b>
+{% endif %}
+
+{% endblock %}

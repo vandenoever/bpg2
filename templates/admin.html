@@ -1,0 +1,35 @@
+{% extends "mainpage.html" %}
+{% block body %}
+<table>
+    <tr>
+        <td valign="top">
+            <ul>
+                <li>Status MultiChain:
+                    {% if multichainstatus %}
+                        <span style="display: inline;">
+                        <font color="green">Running<font>
+                        <form action="{{ url_for('multichainstartstop') }}" method=post class=multichain>
+                            <input type="hidden" name="do" value="stop">
+                            <input type=submit value=Stop>
+                        </form>
+                        </span>
+                    {% else %}
+                        <font color="red">Stopped<font>
+                        <form action="{{ url_for('multichainstartstop') }}" method=post class=multichain>
+                            <input type="hidden" name="do" value="start">
+                            <input type=submit value=Start>
+                        </form>
+                    {% endif %}
+                </li>
+                <li><a href="/getinfo">Getinfo</a></li>
+
+
+            </ul>
+        </td>
+        <td>{% autoescape false %}
+            {%if message %}{{ message }}{% endif %}
+            {% endautoescape %}
+        </td>
+    </tr>
+</table>
+{% endblock %}

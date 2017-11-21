@@ -1,0 +1,33 @@
+{% extends "mainpage.html" %}
+{% block body %}
+
+{% if keyList %}
+    <h2>Select user for which to show work to be done</h2>
+    {# First present a list of users #}
+    <form action="{{ url_for('sign') }}" method=post class=sign>
+        {% for key in keyList %}
+            <input type="radio" name="uid" value="{{ key['key'] }}">{{ key['uid'] }}<br>
+        {% endfor %}
+        <input type=submit value="Select this user (yes, I know, should be through authentication, but this is a POC damnit!)">
+    </form>
+{% endif %}
+
+{% if documents %}
+    <h2>Click on the &quot;Sign&quot; button for the documents you want to sign</h2>
+    <table>
+    {% for document in documents %}
+        <tr>
+            <td><a href="/uploaded/{{ document }}">{{document}}</a></td>
+            <td>
+                <form action="{{ url_for('signature') }}" method=post class=signature>
+                    <input type="hidden" name="uid" value="{{ uid }}">
+                    <input type="hidden" name="document" value="{{ document }}">
+                    <input type=submit value="Sign">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}

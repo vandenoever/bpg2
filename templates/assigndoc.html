@@ -1,0 +1,17 @@
+{% extends "mainpage.html" %}
+{% block body %}
+<h2>Select document that needs signatures</h2>
+
+
+    {# First present a list of files #}
+
+    <form action="{{ url_for('assigndoc') }}" method=post class=assigdoc>
+        {% for file in uploadedFiles %}
+            <input type="radio" name="document" value="{{ file }}">{{ file }}<br>
+        {% endfor %}
+        <input type=submit value="Add needed signatures">
+    </form>
+
+
+
+{% endblock %}
