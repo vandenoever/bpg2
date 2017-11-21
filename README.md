@@ -1,5 +1,13 @@
 # bpg2
-A proof-of-concept work to combine blockchain technology to sore openGPG signed documents.
+A proof-of-concept work to combine blockchain technology to store openGPG signed documents.
+
+I think in the near future thgis is the way to sign, store and archive important documents.
+
+It simulated the workflow of the way I envision this to work in the future
+* First somebody uploades a document into the system (or use a web service for that eventualy).
+* Then the document signing gets assigned to one or more persons.
+* Then, when these persons log in, they get a list of documents to sign.
+* The sign the documents and the result is added/archived to the blockchain.
 
 # Installation
 
