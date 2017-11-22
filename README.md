@@ -25,11 +25,11 @@ Steps to install on Linux:
 * Install GPG on your system
 * install sqlite3 on your system.
 * Install multichain somewhere on your system. I used the root directory of this git repo for that.
-* Create a virtual Python environment. Example: "virtualenv venv"
-* Install all needed Python libraries: Example: "pip install -r requirements.txt"
-* There is, at the time of wriing, a bug in the Savoir library. So open venv/lib/python2.7/site-packages/Savoir/__init__.py and change the line
-to read "from Savoir import *".
-* That's it. Go start the app: "./go.sh". It will 
+* Create a virtual Python environment. Example: `virtualenv venv`
+* Install all needed Python libraries: Example: `pip install -r requirements.txt`
+* There is, at the time of writing, a bug in the Savoir library. So open `venv/lib/python2.7/site-packages/Savoir/__init__.py` and change the line
+to read `from Savoir import *`.
+* That's it. Go start the app: `./go.sh`. It will 
 
 The steps to initialize the blockchain software are done when you start multichain for the first time *from the application!*
 
