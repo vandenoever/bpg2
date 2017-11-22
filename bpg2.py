@@ -55,7 +55,7 @@ APP.config.update(dict(
     SECRET_KEY='development key',
     USERNAME='admin',
     PASSWORD='admin',
-    MULTICHAIN='multichain-1.0.1',
+    MULTICHAIN='multichain-1.0.2',
     UPLOAD_FOLDER='uploaded',
     SIGNED_FOLDER='signed',
     CHECK_FOLDER='check'
